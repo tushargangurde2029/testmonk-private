@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->  
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+    <link rel="stylesheet" href="{%static 'css/stylemain.css'%}">
+
+        <title>About Us</title>
+        <style>
+            .about{
+                padding: 10%;
+            }
+        </style>
+    </head>
+    <body>
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-up-arrow-alt scrolltop__icon'></i>
+        </a>
+        
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <img class="responsive-img" style="width: 100px;" src="{% static 'files/logo.png' %}" />
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/" class="nav__link ">Home</a></li>
+                        <li class="nav__item"><a href="login" class="nav__link">Login</a></li>
+                        <li class="nav__item"><a href="register" class="nav__link">Register</a></li>
+                        <li class="nav__item"><a href="contactus" class="nav__link">Contact Us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </nav>
+        </header>
+
+        
+            
+
+            <div class="about">
+                <h1 style="font-size:3vw; font-weight: bold;">About Us </h1>
+
+                <p style="font-size:2vw;">TestMonk is an eSports gaming tournament company based in India. Competitive Gaming Tournaments are played across platforms such as Pc, Console and Mobile. We currently have Online eSports Portal. Offline Tournaments will be held in the future. Online eSports is launched with an idea of to host the online tournaments for the eSports Community. To passion for gaming and to provide the best eSports competitive experience, we are here to deliver the best for the community.</p>
+            
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="{% static 'files/main.js' %}"></script>
+        {% if response %}
+<form action="/success/" method="POST">
+    <script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        data-key="rzp_live_eabutt0DNN4Pc7"
+        data-amount=1000
+        data-currency=INR
+        data-order_id={{payment.id}}
+        data-buttontext="Pay with Razorpay"
+        data-name="ILoveDjango3000"
+        data-description=""
+        data-image=""
+        data-prefill.name={{request.user.username}}
+        data-prefill.email={{request.user.email}}
+        data-theme.color="#F37254"
+    ></script>
+    <input type="hidden" custom="Hidden Element" name="hidden">
+    </form>
+{% endif %}
+    </body>
+</html>

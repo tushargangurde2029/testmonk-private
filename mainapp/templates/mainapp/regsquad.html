@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/regstyle.css' %}" >
+     <!--========== BOX ICONS ==========-->  
+     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+     <!--========== CSS ==========-->
+ <link rel="stylesheet" href="{% static 'css/stylemain.css' %}">
+
+    <title>Register Yourself!</title>
+    <!--password validator-->
+    <style>
+      /* The message box is shown when the user clicks on the password field */
+      #message {
+        display:none;
+        background: #f1f1f1;
+        color: #000;
+        position: relative;
+        padding: 20px;
+        margin-top: 10px;
+      }
+      #message p {
+        padding: 10px 35px;
+        font-size: 18px;
+      }
+      /* Add a green text color and a checkmark when the requirements are right */
+      .valid {
+        color: green;
+      }
+      .valid:before {
+        position: relative;
+        left: -35px;
+        content: "?";
+      }
+      /* Add a red text color and an "x" when the requirements are wrong */
+      .invalid {
+        color: red;
+      }
+      .invalid:before {
+        position: relative;
+        left: -35px;
+        content: "?";
+      }
+    </style>
+    <!---->
+</head>
+<body>
+  <header class="l-header" id="header">
+    <nav class="nav bd-container">
+        <img class="responsive-img" style="width: 100px;" src="{% static 'files/logo.png' %}" />
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+            </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-grid-alt'></i>
+        </div>
+    </nav>
+</header>
+</br>
+</br>
+</br>
+        <form method="POST" name="form1">
+            {% csrf_token %}
+        <div class="container">
+            <div class="row">
+                <div class="col-25">
+                  <label for="p1">Player 1 Username</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="p1"  name="p1" >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="p2">Player 2 Username</label>
+                </div>
+                <div class="col-75">
+                  <input type="text"  name="p2" >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="p3">Player 3 Username</label>
+                </div>
+                <div class="col-75">
+                  <input type="text"  name="p3">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="p4">Player 4 Username</label>
+                </div>
+                <div class="col-75">
+                  <input type="text"  name="p4" >
+                </div>
+              </div>
+    
+              
+  
+              <div class="row">
+                <input type="submit" value="Register!" onclick="phonenumber(document.form1.mobile_number)">
+              </div>
+            </form>
+          </div>
+    </form>
+     <!--========== SCROLL REVEAL ==========-->
+     <script src="https://unpkg.com/scrollreveal"></script>
+
+     <!--========== MAIN JS ==========-->
+     <script src="{% static 'files/main.js' %}"></script>
+
+     
+</body>
+</html>

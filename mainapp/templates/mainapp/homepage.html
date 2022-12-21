@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <style>
+            /* Place the navbar at the bottom of the page, and make it stick */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.navbar a {
+  font-size: 2vw;
+  color: #f2f2f2;
+  text-align: center;
+  display: inline-block;
+  padding: 1%;
+  text-decoration: none;
+  margin: 0px auto;
+}
+
+.navbar a:hover {
+  background: #f1f1f1;
+  color: black;
+}
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->  
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+    <link rel="stylesheet" href="{%static 'css/stylemain.css'%}">
+
+        <title>Welcome to TestMonk</title>
+    </head>
+    <body>
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-up-arrow-alt scrolltop__icon'></i>
+        </a>
+        
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <img class="responsive-img" style="width: 100px;" src="{% static 'files/logo.png' %}" />
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="homedashboard" class="nav__link">Tournaments</a></li>
+                        <li class="nav__item"><a href="login" class="nav__link">Login</a></li>
+                        <li class="nav__item"><a href="register" class="nav__link">Register</a></li>
+                        <li class="nav__item"><a href="contactus" class="nav__link">Contact Us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--========== HOME ==========-->
+            <section class="home" id="home">
+                <div class="home__container bd-container bd-grid">
+                    <div class="home__img">
+                        <img src="{% static 'files/logo.gif' %}" alt="">
+                    </div>
+
+                    <div class="home__data">
+                        <h1 class="home__title">Play Matches and Earn Money</h1>
+                        <p class="home__description">Play online games and earn the money while playing and make your career in the Esports.</p>
+                        <a href="login" class="button">Login</a>
+                        <a href="register" class="button">Register</a>
+                    </div>   
+                </div>
+            </section>
+
+            </main>
+        
+            <div class="navbar">
+                <a href="terms" >Terms and Conditions</a>
+                <a href="refund">Refund and Returns Policy</a>
+                <a href="privacy">Priacy Policy</a>
+                <a href="about">About Us</a>
+              </div>
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="{% static 'files/main.js' %}"></script>
+    </body>
+</html>

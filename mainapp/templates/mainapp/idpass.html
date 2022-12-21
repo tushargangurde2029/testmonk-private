@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      background-image: url("{%static 'files/back.jpg'%}");
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>id_password</title>
+    <!--========== BOX ICONS ==========-->  
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--========== CSS ==========-->
+<link rel="stylesheet" href="{%static 'css/stylemain.css'%}">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'css/dash.css'%}">
+</head>
+<body>
+  <!--========== HEADER ==========-->
+  <header class="l-header" id="header">
+    <nav class="nav bd-container">
+        <img class="responsive-img" style="width: 80px;" src="{% static 'files/logo.png' %}" />
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="dashboard" class="nav__link ">Dashboard</a></li>
+                <li class="nav__item"><a href="profile" class="nav__link">Profile</a></li>
+                <li class="nav__item"><a href="showidpass" class="nav__link active-link">Show Id Pass</a></li>
+                <li class="nav__item"><a href="regmatches" class="nav__link ">Registered Matches</a></li>
+                <li class="nav__item"><a href="logoutuser" class="nav__link">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-grid-alt'></i>
+        </div>
+    </nav>
+</header>
+</br>
+</br>
+</br>
+  <div class="center">
+  {% for i in register %}
+    <div class="card">
+      <div class="additional">
+        <div class="user-card">
+          <img src="{% static 'files/pn.jpg' %}"alt="login" class="login-card-img" >
+        </div>
+        <div class="more-info">
+          <h1>{{i.match_name}}</h1>
+          <div class="coords">
+            <span>After the payment there is no refund of the money if any situation occurs from our side then its refunded to your account</span>
+          </div>
+        </div>
+      </div>
+      <div class="general">
+        <h3>{{i.match_name}}</h3>
+        <h4>Id = {{i.gameid}}</h4>
+        <h4>Password ={{i.pwd}}</h4>
+        
+        <span class="more">Mouse over the card for more info</span>
+      </div>
+    </div>
+  
+  {% endfor %}
+</div>
+  </div>
+  </body>
+  <!--========== SCROLL REVEAL ==========-->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!--========== MAIN JS ==========-->
+  <script src="{% static 'files/main.js' %}"></script>
+</html>
