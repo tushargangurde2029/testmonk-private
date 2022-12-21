@@ -18,7 +18,7 @@ def success(request,mname):
 
 # Create your views here.
 def hello(request):     
-    return render(request,"mainapp\homepage.html")
+    return render(request,"mainapp/homepage.html")
 def profile(request):
     data=User_Data.objects.get(tuser=request.user.username)
     countmatches=Register_Match.objects.filter(username=request.user.username).count()
@@ -26,14 +26,14 @@ def profile(request):
         'user':data,
         'countmatches':countmatches
     }
-    return render(request,"mainapp\profile.html",context)
+    return render(request,"mainapp/profile.html",context)
     
 def showidpass(request):
     checkregister=Register_Match.objects.filter(username=request.user.username,flag_set="yes").values().order_by('-id')
     data={
         'register':checkregister
     }
-    return render(request,"mainapp\idpass.html",data)
+    return render(request,"mainapp/idpass.html",data)
 
 
 def dashboard(request):
@@ -68,7 +68,7 @@ def info(request,mname):
         registerboy=users_match(player_name=p5,mobile_number=data.mobile_number,payment="no")
         registerboy.save()
         return redirect("dashboard")
-    return render(request,"mainapp\\regsquad.html")
+    return render(request,"mainapp//regsquad.html")
 
 def register(request):
     flag="success"
