@@ -58,13 +58,11 @@
             {% else %}
               {% if i.match_name in  temp %}
                 <a href="#" class="btn btn-primary">Joined</a>
-		            {% ifequal '0' i.pricing %}
 			          {% if i.match_name not in  temp %}
 			          {% ifnotequal 0 i.slots %}
           		    <a href="registermatch/{{i.match_name}}" class="btn btn-success">Join</a>
 			          {% endifnotequal %}
 			          {% endif %}
-          	{% endifequal %}
             {% else %}
 		{% ifequal '0' i.pricing%}
           <a href="registermatch/{{i.match_name}}" class="btn btn-success">Join</a>
